@@ -9,13 +9,13 @@ const UpdateCrud = () => {
         {'crud_name': '', 'crud_autor': '', 'crud_budget': ''}
     );
     const navigate = useNavigate()
-    const handleInput = (e) => {
-        const {name, value} = e.target;
-        setCrudData({
-            ...crudData,
-            [name]: value
-        });
-    }
+    // const handleInput = (e) => {
+    //     const {name, value} = e.target;
+    //     setCrudData({
+    //         ...crudData,
+    //         [name]: value
+    //     });
+    // }
 
     const handleSumit = async (e) => {
         e.preventDefault();
@@ -31,6 +31,14 @@ const UpdateCrud = () => {
             console.error(error);
         }
     }
+    const handleInput = (e) => {
+        const { name, value } = e.target;
+        setCrudData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+    
 
     useEffect(() => {
         axios
