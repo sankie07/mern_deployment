@@ -21,7 +21,7 @@ const UpdateCrud = () => {
         e.preventDefault();
         try {
             const response = await axios.put(
-                `https://ms-rust.vercel.app/api/updatecrud/${bid}`,
+                `https://m-alpha-bay.vercel.app/api/updatecrud/${bid}`,
                 crudData
             );
             console.log(response.data);
@@ -34,7 +34,7 @@ const UpdateCrud = () => {
 
     useEffect(() => {
         axios
-            .get(`https://ms-rust.vercel.app/https://ms-rust.vercel.app/api/viewcrud/${bid}`)
+            .get(`https://m-alpha-bay.vercel.app/api/viewcrud/${bid}`)
             .then(response => {
                 setCrudData({
                     ...crudData,
