@@ -33,20 +33,23 @@ const ViewCrud = () => {
             <div className='custom-height z-10'>
 
                 <h1 className='text-2xl text-center text-gray-200 pt-4 pb-5'>Entries</h1>
-                <div className='self-center '>
-
+                <div className='self-center  '>
+                    <div className="overflow-x-auto">
                     <table
                         className='min-w-full mx-auto border-separate border-spacing-1 border bg-slate-800 rounded-lg border-slate-500 '>
                         <thead>
                             <tr className='text-center text-gray-50 '>
-                                <th className='text-xl  border border-slate-600 p-4 m-4 rounded-lg'>Entry</th>
-                                <th className='text-xl border border-slate-600 p-4 m-4  rounded-lg'>Auther</th>
-                                <th className='text-xl border border-slate-600  p-4 m-4 rounded-lg'>Price</th>
-                                <th className='text-xl border border-slate-600  p-4 m-4 rounded-lg '>action</th>
-                                {/* <th className='text-xl border border-slate-600  p-4 m-4 rounded-lg'>delete</th> */}
+                                {/* <th className='text-xl  border border-slate-600 p-2 m-2 rounded-lg'>Entry</th>
+                                <th className='text-xl border border-slate-600 p-2 m-2  rounded-lg'>Auther</th>
+                                <th className='text-xl border border-slate-600  p-2 m-2 rounded-lg'>Price</th>
+                                <th className='text-xl border border-slate-600  p-2 m-2 rounded-lg '>action</th> */}
+                                    <th className='px-2 py-1 border border-slate-600 rounded-lg'>Entry</th>
+                                    <th className='px-2 py-1 border border-slate-600 rounded-lg'>Author</th>
+                                    <th className='px-2 py-1 border border-slate-600 rounded-lg'>Price</th>
+                                    <th className='px-2 py-1 border border-slate-600 rounded-lg'>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        {/* <tbody>
                             {
                                 crudData.map((cruds, index) => (
                                     <tr className='text-center text-gray-50' key={index}>
@@ -69,8 +72,26 @@ const ViewCrud = () => {
                                     </tr>
                                 ))
                             }
-                        </tbody>
+
+                        </tbody> */}
+                        <tbody>
+                                {crudData.map((cruds, index) => (
+                                    <tr className='text-center text-gray-50' key={index}>
+                                        <td className='p-2 border border-slate-600 rounded-lg'>{cruds.crud_name}</td>
+                                        <td className='p-2 border border-slate-600 rounded-lg'>{cruds.crud_autor}</td>
+                                        <td className='p-2 border border-slate-600 rounded-lg'>{cruds.crud_budget}</td>
+                                        <td className='p-2 border border-slate-600 rounded-lg'>
+                                            <div className='flex justify-center'>
+                                                <Link to={`/updatecrud/${cruds._id}`} className='mx-2 text-blue-500 hover:text-blue-700'>Edit</Link>
+                                                <button onClick={() => deletecrud(cruds._id)} className='mx-2 text-red-500 hover:text-red-700'>Delete</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
                     </table>
+                    </div>
+                   
                 </div>
             </div>
             {/* <Routes>
