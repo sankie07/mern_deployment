@@ -10,7 +10,7 @@ const ViewCrud = () => {
     }, []);
     const getcrud = async () => {
         axios
-            .get('http://localhost:3000/api/viewcrud')
+            .get('https://ms-rust.vercel.app/api/viewcrud')
             .then(response => {
                 setCrudData(response.data);
             })
@@ -19,7 +19,7 @@ const ViewCrud = () => {
             });
     }
     const deletecrud = async (id) => {
-        axios.delete(`http://localhost:3000/api/deletecrud/${id}`)
+        axios.delete(`https://ms-rust.vercel.app/api/deletecrud/${id}`)
         getcrud();
     }
 

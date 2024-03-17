@@ -19,7 +19,7 @@ const CreateBook = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'http://localhost:3000/api/addcrud',
+                'https://ms-rust.vercel.app/api/addcrud',
                 crudData
             );
             console.log(response.data);
