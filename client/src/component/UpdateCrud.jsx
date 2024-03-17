@@ -9,13 +9,7 @@ const UpdateCrud = () => {
         {'crud_name': '', 'crud_autor': '', 'crud_budget': ''}
     );
     const navigate = useNavigate()
-    // const handleInput = (e) => {
-    //     const {name, value} = e.target;
-    //     setCrudData({
-    //         ...crudData,
-    //         [name]: value
-    //     });
-    // }
+    
 
     const handleSumit = async (e) => {
         e.preventDefault();

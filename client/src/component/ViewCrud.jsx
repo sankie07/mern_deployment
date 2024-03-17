@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import Header from './Header';
-
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import UpdateCrud from './UpdateCrud';
 const ViewCrud = () => {
     const [crudData, setCrudData] = useState([]);
 
@@ -55,9 +56,18 @@ const ViewCrud = () => {
                                        
                                         <td className='p-2 md:p-8 border border-slate-600 rounded-lg'>
                                             <div className='flex flex-col md:flex-row items-center justify-center'>
-                                                <a href={`updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>
+                                                {/* <a href={`updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>
                                                 Edit
-                                                </a>
+                                                </a> */}
+                                                {/* <Link to={`updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>
+                                                    
+                                                Edit
+                                            </Link> */}
+                                            <Link to={`/updatecrud/${cruds._id}`}>edit</Link>
+
+                                                <button onClick={() => deletecrud(cruds._id)} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-red-500'>
+                                                Delete
+                                                </button>
                                                 <button onClick={() => deletecrud(cruds._id)} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-red-500'>
                                                 Delete
                                                 </button>
@@ -71,6 +81,11 @@ const ViewCrud = () => {
                     </table>
                 </div>
             </div>
+            {/* <Routes>
+                <Route path="/updatecrud/:bid">
+                    <UpdateCrud />
+                </Route>
+            </Routes> */}
         </div>
     );
 }
