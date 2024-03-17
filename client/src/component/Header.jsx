@@ -19,9 +19,7 @@ const Header = () => {
                                     Entries
                                 </Link>
                             </div>
-                            <div>
-                                
-                            </div>
+                          
                         </div>
                     </nav>
                 </header>
