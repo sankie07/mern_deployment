@@ -54,11 +54,11 @@ const UpdateCrud = () => {
     return (
        <div className='bg-gradient-to-b from-slate-800  to-gray-900'>
         <Header />
-        <div className="flex justify-center  custom-height">
-            <fieldset className="w-72 p-4 m-4 bg-red rounded-lg shadow-md">
-                <legend className="text-lg font-semibold text-center">Update Entry</legend>
+        <div className="flex justify-center  items-center  custom-height">
+            <fieldset className="w-72 p-4 m-4 bg-slate-700 rounded-lg shadow-md ">
+                <legend className="text-lg font-semibold  text-gray-50 text-center">Update Entry</legend>
                 <div className="mt-4">
-                    <label htmlFor="crud_name" className="block mb-2">Entry Name</label>
+                    {/* <label htmlFor="crud_name" className="block mb-2">Entry Name</label> */}
                     <input
                         type="text"
                         id="crud_name"
@@ -68,7 +68,7 @@ const UpdateCrud = () => {
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="crud_autor" className="block mb-2">Entry Author</label>
+                    {/* <label htmlFor="crud_autor" className="block mb-2">Entry Author</label> */}
                     <input
                         type="text"
                         id="crud_autor"
@@ -78,7 +78,7 @@ const UpdateCrud = () => {
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="crud_budget" className="block mb-2">Entry Budget</label>
+                    {/* <label htmlFor="crud_budget" className="block mb-2">Entry Budget</label> */}
                     <input
                         type="text"
                         id="crud_budget"

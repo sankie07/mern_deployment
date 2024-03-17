@@ -36,7 +36,7 @@ const ViewCrud = () => {
                 <div className='self-center '>
 
                     <table
-                        className='table-auto mx-auto border-separate border-spacing-1 border bg-slate-800 rounded-lg border-slate-500 '>
+                        className='min-w-full mx-auto border-separate border-spacing-1 border bg-slate-800 rounded-lg border-slate-500 '>
                         <thead>
                             <tr className='text-center text-gray-50 '>
                                 <th className='text-xl  border border-slate-600 p-4 m-4 rounded-lg'>Entry</th>
@@ -56,13 +56,7 @@ const ViewCrud = () => {
                                        
                                         <td className='p-2 md:p-8 border border-slate-600 rounded-lg'>
                                             <div className='flex flex-col md:flex-row items-center justify-center'>
-                                                {/* <a href={`updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>
-                                                Edit
-                                                </a> */}
-                                                {/* <Link to={`updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>
-                                                    
-                                                Edit
-                                            </Link> */}
+                                               
                                             <Link to={`/updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>edit</Link>
 
                                                 <button onClick={() => deletecrud(cruds._id)} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-red-500'>
