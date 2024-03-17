@@ -11,23 +11,24 @@ function App() {
     return (
         <BrowserRouter>
             <div className="App">
-                <header className="App-header">
+                {/* <header className="App-header">
 
-                    <nav className="bg-gray-800 p-4">
+                    <nav className="bg-slate-700 p-4">
                         <div className="max-w-7xl mx-auto flex justify-between items-center">
-                            <Link to="/" className="text-white font-semibold text-lg">
+                            <Link to="/" 
+                                    className="text-white px-4 py-2 rounded-md bg-gray-600 hover:bg-gray-400 transition duration-300">
                                 Homepage
                             </Link>
                             <div>
                                 <Link
                                     to="/cruds"
-                                    className="text-white px-4 py-2 rounded-md bg-gray-700 hover:bg-gray-600 transition duration-300">
+                                    className="text-white px-4 py-2 rounded-md bg-gray-600 hover:bg-gray-400 transition duration-300">
                                     Cruds
                                 </Link>
                             </div>
                         </div>
                     </nav>
-                </header>
+                </header> */}
                 <main>
 
                     <Routes>

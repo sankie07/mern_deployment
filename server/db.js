@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const urln = 'mongodb+srv://man:man@cluster0.tycpere.mongodb.net/cred_app?retryWrites=true&w' +
         '=majority&appName=Cluster0'
 const upan= 'https://crud-app-pink-sigma.vercel.app';
+const cim = 'mongodb://localhost:27017/crud-app'
 
 mongoose
-    .connect(urln, {
+    .connect(cim, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

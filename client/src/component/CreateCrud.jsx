@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import Header from './Header';
 
 const CreateBook = () => {
     const [crudData, setCrudData] = useState(
@@ -18,7 +19,7 @@ const CreateBook = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://crud-app-api-five.vercel.app/addcrud',
+                'http://localhost:3000/api/addcrud',
                 crudData
             );
             console.log(response.data);
@@ -29,11 +30,15 @@ const CreateBook = () => {
     }
 
     return (
-        <div className="flex justify-center bg-red-200 h-dvh">
-            <fieldset className="w-72 p-4 m-4 bg-red rounded-lg shadow-md">
-                <legend className="text-lg font-semibold text-center">Add Crud</legend>
-                <div className="mt-4">
-                    <label htmlFor="crud_name" className="block mb-2">Crud Name</label>
+        
+       <div className='bg-gradient-to-b from-slate-800  to-gray-900 '>
+        < Header />
+         <div className="flex justify-center  items-center  custom-height">
+            
+            <fieldset className="w-72 p-4 m-4 bg-slate-700 rounded-lg shadow-md ">
+                <legend className="text-2xl text-gray-50 font-semibold text-center">Add Entry</legend>
+                {/* <div className="mt-4">
+                    <label htmlFor="crud_name" className="block mb-2 text-gray-50 text-center">Crud Name</label>
                     <input
                         type="text"
                         id="crud_name"
@@ -41,23 +46,36 @@ const CreateBook = () => {
                         value={crudData.crud_name}
                         onChange={handleInput}
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
-                </div>
+                </div> */}
                 <div className="mt-4">
-                    <label htmlFor="crud_autor" className="block mb-2">Crud Author</label>
+    <input
+        type="text"
+        id="crud_name"
+        name="crud_name"
+        placeholder="Entry Name"
+        value={crudData.crud_name}
+        onChange={handleInput}
+        className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"
+    />
+</div>
+                <div className="mt-4">
+                    {/* <label htmlFor="crud_autor" className="block mb-2 text-gray-50 text-center">Crud Author</label> */}
                     <input
                         type="text"
                         id="crud_autor"
                         name="crud_autor"
+                        placeholder="Entry author"
                         value={crudData.crud_autor}
                         onChange={handleInput}
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="crud_budget" className="block mb-2">Crud Budget</label>
+                    {/* <label htmlFor="crud_budget" className="block mb-2 text-gray-50 text-center">Crud Budget</label> */}
                     <input
                         type="text"
                         id="crud_budget"
                         name="crud_budget"
+                        placeholder='Entry price'
                         value={crudData.crud_budget}
                         onChange={handleInput}
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
@@ -66,14 +84,14 @@ const CreateBook = () => {
                     <button
                         type="button"
                         onClick={handleSumit}
-                        className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-500">
-                        Add Crud
+                        className="w-full p-2 bg-indigo-700 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-500">
+                        Add Entry
                     </button>
                 </div>
             </fieldset>
         </div>
+       </div>
     );
 }
 
 export default CreateBook;
-/////////////////npm r

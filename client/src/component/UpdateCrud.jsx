@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
+import Header from './Header';
 
 const UpdateCrud = () => {
     const {bid} = useParams();
@@ -20,7 +21,7 @@ const UpdateCrud = () => {
         e.preventDefault();
         try {
             const response = await axios.put(
-                `https://crud-app-api-five.vercel.app/${bid}`,
+                `http://localhost:3000/api/updatecrud/${bid}`,
                 crudData
             );
             console.log(response.data);
@@ -33,7 +34,7 @@ const UpdateCrud = () => {
 
     useEffect(() => {
         axios
-            .get(`https://crud-app-api-five.vercel.app/viewcrud/${bid}`)
+            .get(`http://localhost:3000/api/viewcrud/${bid}`)
             .then(response => {
                 setCrudData({
                     ...crudData,
@@ -45,14 +46,16 @@ const UpdateCrud = () => {
             .catch(error => {
                 console.error(error)
             })
-        }, [])
+        }, [bid])
 
     return (
-        <div className="flex justify-center bg-red-200 h-dvh">
+       <div className='bg-gradient-to-b from-slate-800  to-gray-900'>
+        <Header />
+        <div className="flex justify-center  custom-height">
             <fieldset className="w-72 p-4 m-4 bg-red rounded-lg shadow-md">
-                <legend className="text-lg font-semibold text-center">Update Crud</legend>
+                <legend className="text-lg font-semibold text-center">Update Entry</legend>
                 <div className="mt-4">
-                    <label htmlFor="crud_name" className="block mb-2">Crud Name</label>
+                    <label htmlFor="crud_name" className="block mb-2">Entry Name</label>
                     <input
                         type="text"
                         id="crud_name"
@@ -62,7 +65,7 @@ const UpdateCrud = () => {
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="crud_autor" className="block mb-2">Crud Author</label>
+                    <label htmlFor="crud_autor" className="block mb-2">Entry Author</label>
                     <input
                         type="text"
                         id="crud_autor"
@@ -72,7 +75,7 @@ const UpdateCrud = () => {
                         className="w-full p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-500"/>
                 </div>
                 <div className="mt-4">
-                    <label htmlFor="crud_budget" className="block mb-2">Crud Budget</label>
+                    <label htmlFor="crud_budget" className="block mb-2">Entry Budget</label>
                     <input
                         type="text"
                         id="crud_budget"
@@ -86,11 +89,12 @@ const UpdateCrud = () => {
                         type="button"
                         onClick={handleSumit}
                         className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-500">
-                        update Crud
+                        update Entry
                     </button>
                 </div>
             </fieldset>
         </div>
+       </div> 
     )
 }
 

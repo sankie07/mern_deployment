@@ -9,18 +9,18 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-// const cors = require("cors");
+const cors = require("cors");
 // require("dotenv/config");
 const app = express();
 
 // Allow all origins to access the API endpoints
-// app.use(cors());
+app.use(cors());
 
 app.use(express.json());
 
-const db = require('./db');
+const db = require('../db');
 
-const createCrudRoute = require('./routes/createRoutes');
+const createCrudRoute = require('../routes/createRoutes');
 
 app.use(bodyParser.json());
 app.use('/api', createCrudRoute);
