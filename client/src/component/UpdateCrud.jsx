@@ -40,6 +40,7 @@ const UpdateCrud = () => {
     };
     
 
+
     useEffect(() => {
         axios
             .get(`https://m-alpha-bay.vercel.app/api/viewcrud/${bid}`)
@@ -54,7 +55,7 @@ const UpdateCrud = () => {
             .catch(error => {
                 console.error(error)
             })
-        }, [bid])
+        }, [])
 
     return (
        <div className='bg-gradient-to-b from-slate-800  to-gray-900'>
