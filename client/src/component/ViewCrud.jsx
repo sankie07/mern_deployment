@@ -63,14 +63,12 @@ const ViewCrud = () => {
                                                     
                                                 Edit
                                             </Link> */}
-                                            <Link to={`/updatecrud/${cruds._id}`}>edit</Link>
+                                            <Link to={`/updatecrud/${cruds._id}`} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-blue-500'>edit</Link>
 
                                                 <button onClick={() => deletecrud(cruds._id)} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-red-500'>
                                                 Delete
                                                 </button>
-                                                <button onClick={() => deletecrud(cruds._id)} className='mx-2 my-1 md:my-0 text-center md:text-left  hover:text-red-500'>
-                                                Delete
-                                                </button>
+                                               
                                             </div>
                                         </td>
                                         
